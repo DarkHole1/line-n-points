@@ -44,7 +44,7 @@ function drawLine(){
     .circ(x + subangle * (lineLength - lineLength/5), y + subangle2 * (lineLength - lineLength/5), lineLength/5)
     .fill();
   if(y < centerY) y += 5;
-  var calc = x + subangle * lineLength;
+  var calc = x + subangle * (lineLength - lineLength/5) + lineLength/5 * Math.sign(subangle);
   if((calc > 200 || calc < 0)) gameOver = true;
 }
 function click(){
