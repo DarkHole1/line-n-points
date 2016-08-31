@@ -53,7 +53,7 @@ function click(){
       gameOver = true;
       return;
     }
-    generatePoint(67.5);
+    generatePoint(45);
     score++;
     force += .001 * Math.PI / 180;
     var inline = (lineLength - lineLength/5);
@@ -79,7 +79,7 @@ function drawDeath(){
   context.begin().rect(0, 0, canvas.width, canvas.height).fill('rgba(255, 0, 0, .5)');
 }
 function random(min, max){
-  return min + Math.floor(Math.random() * (max - min));
+  return min + Math.random() * (max - min);
 }
 function distance(x1, y1, x2, y2){
   var dx = x2 - x1,
@@ -99,7 +99,7 @@ function drawScore(){
   context.context.fillText(score, 100, 25);
 }
 function generatePoint(angle){
-  var angle2 = Math.atan2(x * 2.5 - 200, y);
+  var angle2 = Math.atan2(x * 2 - 200, y);
   angle /= 2;
   angle *= Math.PI / 180;
   pointAngle = Math.PI + random(angle2 - angle, angle2 + angle);
